@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const items = ref([
   {
@@ -62,6 +62,17 @@ function stockQuantity() {
 function stockItem(item) {
   item.soldOut = false;
 }
+
+/**
+ * 現在時刻を取得する
+ */
+function getDate() {
+  return Date.now();
+}
+
+const getDateComputed = computed(function () {
+  return Date.now();
+});
 </script>
 
 <template>
@@ -69,6 +80,8 @@ function stockItem(item) {
     <img src="/images/logo.svg" alt="" />
     <h1>Vue.js ハンズオン</h1>
   </header>
+  <div>現在時刻：{{ getDate() }}</div>
+  <div>現在時刻(computed){{ getDateComputed }}</div>
   <div>商品数：{{ stockQuantity() }}</div>
   <main class="main">
     <template v-for="(item, index) in items" :key="item.id">
