@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
+import Card from "./components/Card.vue";
 
 const items = ref([
   {
@@ -77,6 +78,11 @@ function getDate() {
 const getDateComputed = computed(function () {
   return Date.now();
 });
+
+function changeSoldOut(id) {
+  const pickElm = items.value.find((item) => item.id == id);
+  pickElm.soldOut = true;
+}
 </script>
 
 <template>
@@ -95,18 +101,14 @@ const getDateComputed = computed(function () {
         :class="{ 'selected-item': item.selected }"
         @click="item.selected = !item.selected"
       >
-        <div class="thumbnail">
-          <img :src="item.image" alt="" />
-        </div>
-        <div class="description">
-          <h2>{{ item.name }}</h2>
-          <!-- プラスワン -->
-          <p>{{ index + 1 }}番目</p>
-          <p>{{ item.description }}</p>
-          <span
-            >¥<span class="price">{{ pricePrefix(item.price) }}</span></span
-          >
-        </div>
+        <Card
+          :id="item.id"
+          :image="item.image"
+          :name="item.name"
+          :description="item.description"
+          :price="item.price"
+          @sold-out="changeSoldOut"
+        />
       </div>
       <div v-else>
         売り切れです<button type="button" @click="stockItem(item)">入荷</button>
@@ -221,3 +223,5 @@ v-show は初期描画のコストが高いです。
 
 関数 : template が更新された時
 算出プロパティ : items が更新された時 -->
+
+<!-- templteタグなんぞ？ divで書いた時にDOMをふやしたくないなどのとき -->
