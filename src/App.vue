@@ -43,13 +43,15 @@ const items = ref([
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template v-for="item in items" :key="item.id">
+    <template v-for="(item, index) in items" :key="item.id">
       <div class="item">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
         <div class="description">
           <h2>{{ item.name }}</h2>
+          <!-- プラスワン -->
+          <p>{{ index + 1 }}番目</p>
           <p>{{ item.description }}</p>
           <span
             >¥<span class="price">{{ item.price }}</span></span
@@ -142,3 +144,10 @@ body {
   font-weight: bold;
 }
 </style>
+
+<!-- const tasks = ref({
+  taskA: 'タスクA',
+  taskB: 'タスクB',
+  taskC: 'タスクC',
+})
+オブジェクトも使える(key,valueもとれる) -->
