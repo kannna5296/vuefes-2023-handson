@@ -105,10 +105,13 @@ function changeSoldOut(id) {
           :id="item.id"
           :image="item.image"
           :name="item.name"
-          :description="item.description"
           :price="item.price"
           @sold-out="changeSoldOut"
-        />
+        >
+          <template #body>
+            <p>{{ item.description }}</p>
+          </template>
+        </Card>
       </div>
       <div v-else>
         売り切れです<button type="button" @click="stockItem(item)">入荷</button>
