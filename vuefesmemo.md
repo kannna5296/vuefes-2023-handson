@@ -7,6 +7,18 @@
 - PostCSS
 - JSX
 
+* どんな経歴の人が入ってくるのがおおい？
+  - 非エンジニアの人、Web とかわからん人。ただ、地図ガチ勢。
+  - WEB 入ってきた人で、地図に興味がある人が入ってきてくれると嬉しい！！！⭐️⭐️⭐️⭐️⭐️
+* 個人で遊んで触ってみたいんやけど、どうしたらいい？（本読めば良い？）
+  　- 本読め！！！！！！⭐️⭐️⭐️⭐️
+  - 元データとかどう撮ってくる？ -> 多分読めばわかる
+* (もっかい聞くけど)どんなビジネスというか需要になるの？？
+  - 灘の公共施設（古墳とかの情報が PDF になってて、それを住民向けに公開したい、ようなニーズ）文化財総覧 WEB
+    https://www.digiarc.aist.go.jp/team/gsvrt/information/aist-3ddb-client/
+  - 「データはあってなんか使いたいねんけどどう使えばいいん？」みたいなところからコンサルしていくイメージ
+  - 一データ
+
 ## 副業
 
 tabian さん（副業メンバーも対応しているらしい）
@@ -102,3 +114,40 @@ vue-test-utils -> SFC(これなんの略だっけ)
 ブラウザの最新版の Ver をひらおう
 
 PostCSS 利用中
+
+## MIERUNE
+
+そらみさん
+
+AIST 3DDBViewer
+産総研（国の機関）が作ったやつ
+
+Vue.js
+(使ってる)CesiumJS(3D 使うときのライブラリ)
+3DTile.js
+deck.gl
+three.js
+
+ArcGis
+maprayJS
+iTowns
+3DTilesRenderjs
+
+国土地理院タイル利用
+WKT 形式
+
+(使ってる)Turf.js
+（物の真ん中がどこかとか、重心どこ？？みたいな話）
+
+産総研 3DDB システムのこれから
+QGIS
+https://github.com/aistairc/aist_3ddb_client ソースコードここです！！！
+
+## STUDIO
+
+- LLM との連携もやってる
+  「来年は 2024 年 10 月 28 日なんやけどそんな感じでタイトル変更して」とか
+  「Vue っぽい色に変更して」
+
+- ContentEditable
+  https://www.tam-tam.co.jp/tipsnote/html_css/post8653.html
